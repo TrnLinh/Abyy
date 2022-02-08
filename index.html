@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="js/node_modules/sal.js/dist/sal.css" />
+    <title>Abyy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#icon").click(function () {
+          $("ul").toggleClass("show");
+          $("#menu").toggleClass("spin");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <nav>
+          <ul id="tabs">
+            <li>
+              <a href="#"
+                ><i class="nav-icon">
+                  <ion-icon name="person-outline"></ion-icon>
+                </i>
+                <i class="nav-text">Profile</i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon"> <ion-icon name="logo-css3"></ion-icon> </i>
+                <i class="nav-text">CSS</i>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="nav-icon"
+                  ><ion-icon name="share-social-outline"></ion-icon
+                ></i>
+                <i class="nav-text">Social</i>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="nav-icon"
+                  ><ion-icon name="terminal-outline"></ion-icon
+                ></i>
+                <i class="nav-text">Terms</i>
+              </a>
+            </li>
+          </ul>
+          <label id="icon">
+            <ion-icon name="grid-outline" id="menu"></ion-icon
+          ></label>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <!--Start edit in here-->
+      <div
+        class="menuWindow active"
+        data-sal="fade"
+        data-sal-delay="300"
+        data-sal-duration="500"
+        data-sal-easing="ease-in-out"
+        data-sal-repeat="1"
+      >
+        <!--Profile-->
+        <div class="wrap">
+          <div class="main-header">
+            <h1>About Me</h1>
+          </div>
+        </div>
+      </div>
+      <div
+        class="menuWindow"
+        data-sal="fade"
+        data-sal-delay="300"
+        data-sal-duration="500"
+        data-sal-easing="ease-in-out"
+        data-sal-repeat="1"
+      >
+        <!--CSS-->
+        <div class="wrap">
+          <div class="main-header">
+            <h1>CSS</h1>
+          </div>
+        </div>
+      </div>
+      <div
+        class="menuWindow"
+        data-sal="fade"
+        data-sal-delay="300"
+        data-sal-duration="500"
+        data-sal-easing="ease-in-out"
+        data-sal-repeat="1"
+      >
+        <div class="wrap">
+          <!--Social-->
+          <div class="main-header">
+            <h1>Social</h1>
+          </div>
+        </div>
+      </div>
+      <div
+        class="menuWindow"
+        data-sal="fade"
+        data-sal-delay="300"
+        data-sal-duration="500"
+        data-sal-easing="ease-in-out"
+        data-sal-repeat="1"
+      >
+        <!--Terms-->
+        <div class="wrap">
+          <div class="main-header">
+            <h1>Terms</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Stop here-->
+    <script>
+      document.querySelectorAll("#tabs>li").forEach((el, index) =>
+        el.addEventListener("click", () => {
+          document
+            .querySelector(".container>.active")
+            .classList.remove("active");
+
+          document
+            .querySelector(`.container>:nth-child(${index + 1})`)
+            .classList.add("active");
+        })
+      );
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="js/node_modules/sal.js/dist/sal.js"></script>
+    <script>
+      sal();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+:root {
+  --accent-color: #fff !important;
+  --accent-color-2: #dbdbdb !important;
+  --accent-color-3: #a0739f !important;
+  --bg-color: #3d3d3d;
+  --black: #000;
+  --nav-color: #404040;
+}
+
+* {
+  font-family: "Comic Sans", cursive;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+
+/*nav bar*/
+header {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+nav #icon {
+  font-size: 40px;
+  height: 50px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+nav {
+  display: flex;
+}
+nav ul li {
+  padding: 5px 0;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 50px;
+  width: 500px;
+  height: max-content;
+  background-color: rgb(255, 255, 255);
+  left: -100%;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+nav ul.show {
+  left: 0;
+  opacity: 1;
+}
+
+.spin {
+  animation: spin 1s forwards;
+}
+nav ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-icon {
+  color: var(--black);
+  transition: 0.3s;
+  font-size: 30px;
+  position: relative;
+  display: block;
+}
+.nav-text {
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  color: var(--black);
+}
+nav ul li a:hover .nav-icon {
+  transform: scale(1.3) translateY(-10px);
+}
+nav ul li a:hover .nav-text {
+  opacity: 1;
+  transform: translateY(15px);
+}
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*tabs*/
+.container > .menuWindow {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+.container > div.active {
+  display: block;
+}
+
+/*main*/
+.wrap {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.wrap-grid {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*profile*/
+.main-header {
+  font-size: 25px;
+  color: var(--nav-color);
+  border-bottom: 4px solid var(--black);
+  width: 100%;
+}
